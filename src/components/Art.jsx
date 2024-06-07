@@ -7,10 +7,10 @@ import Unfinished from "../assets/Unfinished.jpg";
 
 export default function Art() {
   return (
-    <main>
-      <h1>Selected Pieces</h1>
+    <main className="bg-white">
+      <h1 className="text-4xl">Selected Pieces</h1>
       <ImageGrid />
-      <h1>Art Stack</h1>
+      <h1 className="text-4xl">Art Stack</h1>
     </main>
   );
 }
@@ -19,36 +19,36 @@ function ImageGrid() {
   return (
     <section
       id=""
-      className="relative flex min-h-screen flex-col justify-center py-6 sm:py-12"
+      className="relative flex min-h-screen flex-col justify-center"
     >
-      <div className="columns-2 2xl:columns-3 gap-10 [column-fill:_balance] box-border mx-auto before:box-inherit after:box-inherit">
+      <div className="columns-2 md:columns-3 gap-2 md:gap-4 [column-fill:_balance] box-border mx-auto before:box-inherit after:box-inherit p-2">
         <img
-          className="break-inside-avoid mb-6"
-          src={Duck}
-          alt="Duck With Inflatable Digital Photo"
-        />
-        <img
-          className="break-inside-avoid mb-6"
-          src={Portrait}
-          alt="Portrait Drawing of a Woman in Graphite"
-        />
-        <img
-          className="break-inside-avoid mb-6"
-          src={Posty}
-          alt="Post Malone Digital Portrait"
-        />
-        <img
-          className="break-inside-avoid mb-6"
+          className="break-inside-avoid mb-2 md:mb-4"
           src={Sketch}
           alt="Sketch of Woman in Graphite"
         />
         <img
-          className="break-inside-avoid mb-6"
+          className="break-inside-avoid mb-2 md:mb-4"
           src={Valentine}
           alt="Couple Portrait Photo"
         />
         <img
-          className="break-inside-avoid mb-6"
+          className="break-inside-avoid mb-2 md:mb-4"
+          src={Portrait}
+          alt="Portrait Drawing of a Woman in Graphite"
+        />
+        <img
+          className="break-inside-avoid mb-2 md:mb-4"
+          src={Duck}
+          alt="Duck With Inflatable Digital Photo"
+        />
+        <img
+          className="break-inside-avoid mb-2 md:mb-4"
+          src={Posty}
+          alt="Post Malone Digital Portrait"
+        />
+        <img
+          className="break-inside-avoid mb-2 md:mb-4"
           src={Unfinished}
           alt="Unfinished Portrait"
         />
