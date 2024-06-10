@@ -8,7 +8,7 @@ export default function Skills() {
 
 function SkillsGrid() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 sm:gap-20 px-12 sm:px-28 mx-28">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-10 px-8 sm:px-6 md:px-12 mx-28">
       <div className="flex flex-col items-center justify-center p-4">
         <i className="devicon-html5-plain text-xl"></i>
         <div className="text-center">Html</div>
@@ -22,19 +22,19 @@ function SkillsGrid() {
         <div className="text-center">Javascript</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
-        <i className="devicon-react-plain text-xl"></i>
+        <i className="devicon-react-plain text-2xl"></i>
         <div className="text-center">React</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
-        <i className="devicon-nodejs-plain-wordmark text-xl"></i>
+        <i className="devicon-nodejs-plain-wordmark text-4xl"></i>
         <div className="text-center">NodeJS</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
-        <i className="devicon-tailwindcss-original text-xl"></i>
+        <i className="devicon-tailwindcss-original text-2xl"></i>
         <div className="text-center">Tailwind</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
-        <i className="devicon-express-original-wordmark text-xl"></i>
+        <i className="devicon-express-original text-2xl"></i>
         <div className="text-center">Express</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
@@ -42,7 +42,7 @@ function SkillsGrid() {
         <div className="text-center">Python</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
-        <i className="devicon-mongodb-plain text-xl"></i>
+        <i className="devicon-mongodb-plain text-2xl"></i>
         <div className="text-center">MongoDB</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Duck from "../assets/Ducky.svg";
 import Portrait from "../assets/Portrait.jpeg";
 import Posty from "../assets/Posty.svg";
@@ -10,10 +11,17 @@ import Icon from "@mdi/react";
 import { mdiPaletteOutline, mdiCamera, mdiChefHat } from "@mdi/js";
 
 export default function Art() {
+  useEffect(() => {
+    document.documentElement.classList.add("light-theme");
+    return () => {
+      document.documentElement.classList.remove("light-theme");
+    };
+  }, []);
+
   return (
-    <main className="bg-white text-slate-700">
+    <main>
       <ImageGrid />
-      <div className="p-8">
+      <div className="p-6">
         <h1 className="text-xl mx-28 sm:px-20">Art Stack</h1>
         <ArtGrid />
       </div>
@@ -112,7 +120,12 @@ function ArtGrid() {
         <div className="text-center mt-2">Camera</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
-        <Icon path={mdiChefHat} size={2} color="#a7a7a7" aria-label="Camera Icon" />
+        <Icon
+          path={mdiChefHat}
+          size={2}
+          color="#a7a7a7"
+          aria-label="Camera Icon"
+        />
         <div className="text-center mt-2">Cooking</div>
       </div>
     </section>
