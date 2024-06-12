@@ -4,22 +4,24 @@ export default function Navbar() {
   return (
     <nav>
       <div className="flex justify-between gap-4 p-8">
-        <div>Logo</div>
-        <div className="flex gap-4 md:gap-8 ">
-          <a className="text-sm md:text-lg" href="">
-            Work
+        <Link to={"/"} className="text-sm sm:text-lg">
+          Logo
+        </Link>
+        <div className="flex gap-4 sm:gap-8 ">
+          <a className="text-sm sm:text-lg" href="">
+            Projects
           </a>
-          <Link to={"/art"} className="text-sm md:text-lg">
+          <Link to={"/art"} className="text-sm sm:text-lg">
             Art
           </Link>
 
-          <Link to={"/about"} className="text-sm md:text-lg">
+          <Link to={"/about"} className="text-sm sm:text-lg">
             About
           </Link>
 
-          <a className="text-sm md:text-lg" href="">
+          <Link to={"/contact"} className="text-sm sm:text-lg">
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
