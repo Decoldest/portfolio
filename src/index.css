@@ -25,9 +25,195 @@ ul, li {
   list-style-type:none;
 }
 
-.percentage {
-  
+textarea {
+  vertical-align: top
 }
+
+.send-button {
+  text-decoration: none;
+  text-align: center;
+  padding: 12px;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  transition: color .35s, background-color .1s;
+}
+
+.send-button:before,
+.send-button:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  z-index: -1;
+  background-color: #ffffff;
+  transition: all .2s;
+}
+
+.send-button:after {
+  transition-delay: .1s;
+}
+
+.send-button:hover {
+  color: #000000;
+}
+
+.send-button:hover:before,
+.send-button:hover:after {
+  top: 0;
+}
+
+.send-button:active {
+  transform: scale(0.9);
+}
+
+.border-animation {
+  --border-width: 0.2em;
+  --animation-speed: 0.4s;
+  --color: #fff;
+  color: var(--color);
+  position: relative;
+  border-bottom: var(--border-width) solid white;
+}
+
+.border-animation .border-animation__inner {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  background: #333;
+  z-index: 1;
+}
+
+.border-animation:before,
+.border-animation:after {
+  content: '';
+  position: absolute;
+  background: var(--color);
+}
+
+.border-animation:focus:before,
+.border-animation:hover:before {
+  animation: beforeBorders var(--animation-speed) forwards ease-in-out;
+}
+
+.border-animation:focus:after,
+.border-animation:hover:after {
+  animation: afterBorders var(--animation-speed) forwards ease-in-out;
+}
+
+.border-animation:focus,
+.border-animation:hover {
+  animation: borderColors var(--animation-speed) steps(1) forwards;
+  outline: none;
+}
+
+.border-animation:focus .border-animation__inner,
+.border-animation:hover .border-animation__inner {
+  animation: background calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
+  animation-delay: calc(var(--animation-speed) / 5 * 2);
+}
+
+@keyframes beforeBorders {
+  0% {
+      bottom: calc(var(--border-width) * -1);
+      left: 50%;
+      top: auto;
+      right: auto;
+      width: 0;
+      height: var(--border-width);
+  }
+  33% {
+      bottom: calc(var(--border-width) * -1);
+      left: calc(var(--border-width) * -1);
+      top: auto;
+      right: auto;
+      width: calc(var(--border-width) + 50%);
+      height: var(--border-width);
+  }
+  66% {
+      bottom: calc(var(--border-width) * -1);
+      left: calc(var(--border-width) * -1);
+      top: auto;
+      right: auto;
+      width: var(--border-width);
+      height: calc((var(--border-width) * 2) + 100%);
+  }
+  100% {
+      bottom: auto;
+      left: calc(var(--border-width) * -1);
+      top: calc(var(--border-width) * -1);
+      right: auto;
+      width: calc(var(--border-width) + 50%);
+      height: calc((var(--border-width) * 2) + 100%);
+  }
+}
+
+@keyframes afterBorders {
+  0% {
+      bottom: calc(var(--border-width) * -1);
+      left: auto;
+      top: auto;
+      right: 50%;
+      width: 0;
+      height: var(--border-width);
+  }
+  33% {
+      bottom: calc(var(--border-width) * -1);
+      left: auto;
+      top: auto;
+      right: calc(var(--border-width) * -1);
+      width: calc(var(--border-width) + 50%);
+      height: var(--border-width);
+  }
+  66% {
+      bottom: calc(var(--border-width) * -1);
+      left: auto;
+      top: auto;
+      right: calc(var(--border-width) * -1);
+      width: var(--border-width);
+      height: calc((var(--border-width) * 2) + 100%);
+  }
+  100% {
+      bottom: auto;
+      left: auto;
+      top: calc(var(--border-width) * -1);
+      right: calc(var(--border-width) * -1);
+      width: calc(var(--border-width) + 50%);
+      height: calc((var(--border-width) * 2) + 100%);
+  }
+}
+
+@keyframes borderColors {
+  0% {
+      border-bottom-color: var(--color);
+      border-left-color: transparent;
+      border-top-color: transparent;
+      border-right-color: transparent;
+  }
+  33% {
+      border-bottom-color: var(--color);
+      border-left-color: transparent;
+      border-top-color: transparent;
+      border-right-color: transparent;
+  }
+  66% {
+      border-bottom-color: var(--color);
+      border-left-color: var(--color);
+      border-top-color: transparent;
+      border-right-color: var(--color);
+  }
+  100% {
+      border-bottom-color: var(--color);
+      border-left-color: var(--color);
+      border-top-color: var(--color);
+      border-right-color: var(--color);
+  }
+}
+
+
 
 /* @media (prefers-color-scheme: light) {
   :root {

@@ -49,7 +49,7 @@ function ContactForm() {
 
   return (
     <section>
-      <div className="grid sm:grid-cols-2 items-center gap-2 my-6 mx-auto max-w-4xl">
+      <div className="grid md:grid-cols-2 items-center gap-10 p-2 my-6 mx-auto max-w-6xl">
         <div>
           <h1 className="text-3xl font-extrabold">Contact Me</h1>
           <p className="text-sm mt-3">
@@ -68,64 +68,83 @@ function ContactForm() {
                     aria-label="Email Icon"
                   />
                 </div>
-                <h2 className="block text-md">Click to copy</h2>
-                <strong>
-                  <button onClick={handleCopyEmail}>
-                    {emailCopy ? "Copied!" : email}
-                  </button>
-                </strong>
+                <div className="flex flex-col">
+                  <h2 className="block text-md">Click to copy</h2>
+                  <strong>
+                    <button onClick={handleCopyEmail}>
+                      {emailCopy ? "Copied!" : email}
+                    </button>
+                  </strong>
+                </div>
               </li>
             </ul>
           </div>
           <div className="mt-12">
             <h2 className="text-lg font-extrabold">More of Me</h2>
-            <ul className="flex mt-3 space-x-4">
+            <ul className="flex mt-5 space-x-12">
               <li className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <Link
-                  to={"https://github.com/Decoldest"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-github text-2xl sm:hover:animate-jiggle"></i>
-                </Link>
+                <div className="flex flex-col items-center text-sm">
+                  <Link
+                    to={"https://github.com/Decoldest"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-github text-2xl"></i>
+                  </Link>
+                  <span>Github</span>
+                </div>
               </li>
               <li className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <Link
-                  to={"https://linkedin.com/ryanjameswong"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-linkedin text-2xl sm:hover:animate-jiggle"></i>
-                </Link>
+                <div className="flex flex-col items-center text-sm">
+                  <Link
+                    to={"https://linkedin.com/ryanjameswong"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-linkedin text-2xl"></i>
+                  </Link>
+                  <span>LinkedIn</span>
+                </div>
               </li>
               <li className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <Link
-                  to={"https://instagram.com/ryanwong.zip"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-instagram text-2xl sm:hover:animate-jiggle"></i>
-                </Link>
+                <div className="flex flex-col items-center text-sm">
+                  <Link
+                    to={"https://instagram.com/ryanwong.zip"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-instagram text-2xl"></i>
+                  </Link>
+                  <span>Instagram</span>
+                </div>
               </li>
             </ul>
           </div>
         </div>
         <form ref={form} onSubmit={sendEmail}>
-          <input
-            type="email"
-            name="user_email"
-            placeholder="Email"
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm"
-          />
-          <textarea
-            placeholder="Message"
-            name="message"
-            rows="6"
-            className="w-full rounded-md px-4 bg-gray-100 text-sm pt-3 mt-3"
-          ></textarea>
+          <div className="border-animation">
+            <div className="border-animation__inner">
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Email"
+                className=" w-full py-3 px-4 text-sm focus:outline-none"
+              />
+            </div>
+          </div>
+          <div className="border-animation mt-5">
+            <div className="border-animation__inner">
+              <textarea
+                placeholder="Message"
+                name="message"
+                rows="8"
+                className="w-full px-4 text-sm focus:outline-none"
+              ></textarea>
+            </div>
+          </div>
           <button
             type="submit"
-            className="text-white bg-[#007bff] hover:bg-blue-600 font-semibold rounded-md text-sm mt-5 px-4 py-3 w-1/4"
+            className="w-1/4 border-2 border-gray-100 send-button"
           >
             Send
           </button>
