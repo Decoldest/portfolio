@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function SocialLinks() {
   return (
-    <div className=" flex flex-row sm:flex-col sm:fixed sm:top-80 sm:left-20 sm:gap-4 justify-around items-center">
+    <div className=" flex flex-row md:flex-col md:fixed md:top-80 md:left-12 md:gap-4 justify-around items-center">
       <Link
         to={"https://github.com/Decoldest"}
         target="_blank"

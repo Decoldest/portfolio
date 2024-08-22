@@ -8,9 +8,9 @@ export default function Navbar() {
           Logo
         </Link>
         <div className="flex gap-4 sm:gap-8 ">
-          <a className="text-sm sm:text-lg" href="">
+          <Link to={"/projects"} className="text-sm sm:text-lg">
             Projects
-          </a>
+          </Link>
           <Link to={"/art"} className="text-sm sm:text-lg">
             Art
           </Link>

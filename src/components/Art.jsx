@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Duck from "../assets/Ducky.svg";
 import Portrait from "../assets/Portrait.jpeg";
 import Posty from "../assets/Posty.svg";
@@ -30,44 +30,72 @@ export default function Art() {
   );
 }
 
+const images = [
+  {
+    className: "break-inside-avoid mb-2 md:mb-6",
+    src: Duck,
+    alt: "Duck With Inflatable Digital Photo",
+  },
+  {
+    src: Valentine,
+    alt: "Couple Portrait Photo",
+  },
+  {
+    src: Portrait,
+    alt: "Portrait Drawing of a Woman in Graphite",
+  },
+  {
+    src: Sketch,
+    alt: "Sketch of Woman in Graphite",
+  },
+  {
+    src: Posty,
+    alt: "Post Malone Digital Portrait",
+  },
+  {
+    src: Unfinished,
+    alt: "Unfinished Portrait",
+  },
+];
+
 function ImageGrid() {
+  const className = "break-inside-avoid mb-2 md:mb-6";
+  const [selected, setSelected] = useState(null);
+
   return (
     <section
       id=""
       className="relative flex min-h-screen flex-col justify-center pt-6 mb-2 sm:mb-20"
     >
       <div className="columns-2 xl:columns-3 gap-2 md:gap-6 [column-fill:_balance] box-border before:box-inherit after:box-inherit p-2 md:px-12">
-        <img
-          className="break-inside-avoid mb-2 md:mb-6"
-          src={Duck}
-          alt="Duck With Inflatable Digital Photo"
-        />
-        <img
-          className="break-inside-avoid mb-2 md:mb-6"
-          src={Valentine}
-          alt="Couple Portrait Photo"
-        />
-        <img
-          className="break-inside-avoid mb-2 md:mb-6"
-          src={Portrait}
-          alt="Portrait Drawing of a Woman in Graphite"
-        />
-        <img
-          className="break-inside-avoid mb-2 md:mb-6"
-          src={Sketch}
-          alt="Sketch of Woman in Graphite"
-        />
-        <img
-          className="break-inside-avoid mb-2 md:mb-6"
-          src={Posty}
-          alt="Post Malone Digital Portrait"
-        />
-        <img
-          className="break-inside-avoid mb-2 md:mb-6"
-          src={Unfinished}
-          alt="Unfinished Portrait"
-        />
+        {images.map((image) => (
+          <img
+            src={image.src}
+            alt={image.alt}
+            key={image.alt}
+            className={className}
+            onClick={() => setSelected(image)}
+          />
+        ))}
       </div>
+      {selected && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          onClick={() => setSelected(null)}
+        >
+          <img
+            className="selected-image"
+            src={selected.src}
+            alt={selected.alt}
+          />
+          <button
+            className="close-button absolute bg-opacity-80 top-10 right-4 md:right-40 bg-white p-2 rounded"
+            onClick={() => setSelected(null)}
+          >
+            Close
+          </button>
+        </div>
+      )}
     </section>
   );
 }

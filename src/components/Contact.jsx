@@ -16,9 +16,29 @@ function ContactForm() {
   const email = `ryanjameswong@outlook.com`;
   const [emailCopy, setEmailCopy] = useState(false);
   const form = useRef();
+  const [error, setError] = useState(null);
 
   const sendEmail = (e) => {
     e.preventDefault();
+
+    const formData = new FormData(form.current);
+    const userEmail = formData.get("user_email");
+    const userMessage = formData.get("message");
+
+    let errorMessage = "";
+
+    if (!userEmail && !userMessage) {
+      errorMessage = "Please fill in both the email and message fields.";
+    } else if (!userEmail) {
+      errorMessage = "Please fill in the email field.";
+    } else if (!userMessage) {
+      errorMessage = "Your message is empty.";
+    }
+
+    if (errorMessage) {
+      setError(errorMessage);
+      return;
+    }
 
     emailjs
       .sendForm(
@@ -49,9 +69,9 @@ function ContactForm() {
 
   return (
     <section>
-      <div className="grid md:grid-cols-2 items-center gap-10 p-2 my-6 mx-auto max-w-6xl">
-        <div>
-          <h1 className="text-3xl font-extrabold">Contact Me</h1>
+      <div className="contact-grid grid md:grid-cols-2 items-start gap-10 px-6 my-4 sm:my-6 mx-auto max-w-6xl">
+        <div className="flex flex-col">
+          <h1 className="text-3xl">Contact Me</h1>
           <p className="text-sm mt-3">
             To get in touch you can copy my email below or send a message
             through the form.
@@ -121,34 +141,58 @@ function ContactForm() {
             </ul>
           </div>
         </div>
-        <form ref={form} onSubmit={sendEmail}>
-          <div className="border-animation">
-            <div className="border-animation__inner">
-              <input
-                type="email"
-                name="user_email"
-                placeholder="Email"
-                className=" w-full py-3 px-4 text-sm focus:outline-none"
-              />
+        <div>
+          <h2 className="text-xl mb-2">Send a Message</h2>
+          <form className="formtest" ref={form} onSubmit={sendEmail}>
+            <div className="border-animation" tabIndex="0">
+              <div className="border-animation__inner">
+                <input
+                  type="email"
+                  name="user_email"
+                  placeholder="Email"
+                  className="w-full py-3 px-4 text-sm focus:outline-none"
+                  onFocus={(e) =>
+                    e.target.parentElement.parentElement.classList.add("focus")
+                  }
+                  onBlur={(e) =>
+                    e.target.parentElement.parentElement.classList.remove(
+                      "focus",
+                    )
+                  }
+                  onChange={() => setError(null)}
+                />
+              </div>
             </div>
-          </div>
-          <div className="border-animation mt-5">
-            <div className="border-animation__inner">
-              <textarea
-                placeholder="Message"
-                name="message"
-                rows="8"
-                className="w-full px-4 text-sm focus:outline-none"
-              ></textarea>
+            <div className="border-animation mt-5" tabIndex="0">
+              <div className="border-animation__inner">
+                <textarea
+                  placeholder="Message"
+                  name="message"
+                  rows="8"
+                  className="w-full py-3 px-4 text-sm focus:outline-none"
+                  onFocus={(e) =>
+                    e.target.parentElement.parentElement.classList.add("focus")
+                  }
+                  onBlur={(e) =>
+                    e.target.parentElement.parentElement.classList.remove(
+                      "focus",
+                    )
+                  }
+                  onChange={() => setError(null)}
+                ></textarea>
+              </div>
             </div>
+            <button
+              type="submit"
+              className="w-1/4 border-2 border-gray-100 send-button"
+            >
+              Send
+            </button>
+          </form>
+          <div className="error-container mt-3" style={{ minHeight: "1.5rem" }}>
+            {error && <p>{error}</p>}
           </div>
-          <button
-            type="submit"
-            className="w-1/4 border-2 border-gray-100 send-button"
-          >
-            Send
-          </button>
-        </form>
+        </div>
       </div>
     </section>
   );

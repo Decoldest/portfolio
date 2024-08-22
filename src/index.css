@@ -94,24 +94,20 @@ textarea {
   background: var(--color);
 }
 
-.border-animation:focus:before,
-.border-animation:hover:before {
+.border-animation:focus-within:before {
   animation: beforeBorders var(--animation-speed) forwards ease-in-out;
 }
 
-.border-animation:focus:after,
-.border-animation:hover:after {
+.border-animation:focus-within:after{
   animation: afterBorders var(--animation-speed) forwards ease-in-out;
 }
 
-.border-animation:focus,
-.border-animation:hover {
+.border-animation:focus-within  {
   animation: borderColors var(--animation-speed) steps(1) forwards;
   outline: none;
 }
 
-.border-animation:focus .border-animation__inner,
-.border-animation:hover .border-animation__inner {
+.border-animation:focus-within .border-animation__inner {
   animation: background calc(var(--animation-speed) / 5 * 3) forwards ease-in-out;
   animation-delay: calc(var(--animation-speed) / 5 * 2);
 }
@@ -180,7 +176,7 @@ textarea {
       bottom: auto;
       left: auto;
       top: calc(var(--border-width) * -1);
-      right: calc(var(--border-width) * -1);
+      right: calc(var(--border-width) * -1); 
       width: calc(var(--border-width) + 50%);
       height: calc((var(--border-width) * 2) + 100%);
   }
@@ -213,17 +209,57 @@ textarea {
   }
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding: 10px;
+}
 
+.project-preview {
+  margin: 10px 10px;
+  padding: 10px;
+  background: rgba(101, 101, 101, 0.4);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.4);
+  color:white;
+  z-index:1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
 
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+.selected-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-button {
+  cursor: pointer;
+}
+
+.video-thumbnail {
+  border-radius: 12px;
+}
+
+.project-button {
+  background-color: rgb(239, 239, 239);
+  border-radius: 10px;
+  border: solid black 1px;  
+  color: #606060;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 16px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}

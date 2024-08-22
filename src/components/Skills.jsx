@@ -8,7 +8,7 @@ export default function Skills() {
 
 function SkillsGrid() {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-10 px-8 sm:px-6 md:px-12 mx-28">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-10 px-8 sm:px-6 md:px-12 mx-6 sm:mx-28">
       <div className="flex flex-col items-center justify-center p-4">
         <i className="devicon-html5-plain text-xl"></i>
         <div className="text-center">Html</div>
@@ -50,8 +50,8 @@ function SkillsGrid() {
         <div className="text-center">Git</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
-        <i className="devicon-nextjs-plain text-xl"></i>
-        <div className="text-center">NextJS</div>
+        <i className="devicon-sass-original text-3xl"></i>
+        <div className="text-center">Sass</div>
       </div>
       <div className="flex flex-col items-center justify-center p-4">
         <i className="devicon-jest-plain text-xl"></i> 
