@@ -210,7 +210,7 @@ textarea {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   grid-template-rows: 1fr;
   padding: 10px;
   gap: 16px;
@@ -227,6 +227,7 @@ textarea {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  font-size: 1.2rem;
 }
 
 .selected-image {
@@ -245,6 +246,11 @@ textarea {
   object-fit: cover;
 }
 
+.image-thumbnail {
+  border-radius: 12px;
+  object-fit: contain;
+}
+
 .video-full {
   border-radius: 20px;
   margin-bottom: 6rem;
@@ -259,13 +265,11 @@ textarea {
   cursor: pointer;
   display: inline-block;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
   line-height: 16px;
   list-style: none;
   margin: 0;
   padding: 10px 16px;
   text-align: center;
-  transition: all 200ms;
   vertical-align: baseline;
   white-space: nowrap;
   user-select: none;
@@ -274,7 +278,7 @@ textarea {
 }
 
 .project-button:hover {
-  background-color: rgb(223, 240, 255);
+  background-color: rgb(209, 233, 254);
 }
 
 .project-header {
@@ -373,4 +377,48 @@ img.me {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.footer {
+  font-size: 1rem;
+}
+
+.footer-email {
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
+
+@media (max-width: 500px) {
+  .footer-email {
+    font-size: 1rem;
+  }
+}
+
+.contact-email {
+  font-size: 1.2rem;
+}
+
+.contact-grid h1 {
+  font-size: 2.5rem;
+}
+
+.contact-grid h2 {
+  font-size: 1.75rem;
+}
+
+.contact-grid h3 {
+  font-size: 1.2rem;
+}
+
+.contact-grid .socials {
+  font-size: 2rem;
+}
+
+.contact-grid li span {
+  font-size: 1rem;
+}
+
+.contact-grid form, .contact-grid p {
+  font-size: 1.2rem;
 }

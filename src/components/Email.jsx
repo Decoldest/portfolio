@@ -1,6 +1,11 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-export default function Email() {
+Email.propTypes = {
+  className: PropTypes.string,
+};
+
+export default function Email({ className }) {
   const email = `ryanjameswong@outlook.com`;
   const [emailCopy, setEmailCopy] = useState(false);
 
@@ -14,6 +19,11 @@ export default function Email() {
       .catch((err) => console.error("Failed to copy!", err));
   };
   return (
-    <button onClick={handleCopyEmail}>{emailCopy ? "Copied!" : email}</button>
+    <button
+      onClick={handleCopyEmail}
+      className={className}
+    >
+      {emailCopy ? "Copied!" : email}
+    </button>
   );
 }

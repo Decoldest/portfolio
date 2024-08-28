@@ -1,5 +1,4 @@
 import portrait from "../assets/me.png";
-import Email from "./Email";
 
 export default function About() {
   return (

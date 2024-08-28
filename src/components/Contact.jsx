@@ -14,7 +14,6 @@ export default function Contact() {
 }
 
 function ContactForm() {
-  const email = `ryanjameswong@outlook.com`;
   const form = useRef();
   const [error, setError] = useState(null);
 
@@ -61,15 +60,15 @@ function ContactForm() {
     <section>
       <div className="contact-grid grid md:grid-cols-2 items-start gap-10 px-6 my-4 sm:my-6 mx-auto max-w-6xl">
         <div className="flex flex-col">
-          <h1 className="text-3xl header-font">Contact Me</h1>
-          <p className="text-sm mt-3">
+          <h1 className="header-font">Contact Me</h1>
+          <p className="mt-3">
             To get in touch you can copy my email below or send a message
             through the form.
           </p>
           <div className="mt-12">
-            <h2 className="text-lg header-font">Email</h2>
+            <h2 className="header-font">Email</h2>
             <ul className="mt-3">
-              <li className="flex items-center">
+              <li className="flex items-center gap-2">
                 <div className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                   <Icon
                     path={mdiEmailOutline}
@@ -79,49 +78,49 @@ function ContactForm() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <h2 className="block text-md">Click to copy</h2>
+                  <h3 className="block">Click to copy</h3>
                   <strong>
-                    <Email/>
+                    <Email className={"contact-email"} />
                   </strong>
                 </div>
               </li>
             </ul>
           </div>
-          <div className="mt-12">
-            <h2 className="text-lg header-font">More of Me</h2>
+          <div className="socials mt-12">
+            <h2 className="header-font">More of Me</h2>
             <ul className="flex mt-5 space-x-12">
               <li className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <div className="flex flex-col items-center text-sm">
+                <div className="flex flex-col items-center">
                   <Link
                     to={"https://github.com/Decoldest"}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-github text-2xl"></i>
+                    <i className="fab fa-github"></i>
                   </Link>
                   <span>Github</span>
                 </div>
               </li>
               <li className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <div className="flex flex-col items-center text-sm">
+                <div className="flex flex-col items-center ">
                   <Link
                     to={"https://linkedin.com/ryanjameswong"}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-linkedin text-2xl"></i>
+                    <i className="fab fa-linkedin"></i>
                   </Link>
                   <span>LinkedIn</span>
                 </div>
               </li>
               <li className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <div className="flex flex-col items-center text-sm">
+                <div className="flex flex-col items-center ">
                   <Link
                     to={"https://instagram.com/ryanwong.zip"}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-instagram text-2xl"></i>
+                    <i className="fab fa-instagram"></i>
                   </Link>
                   <span>Instagram</span>
                 </div>
@@ -130,7 +129,7 @@ function ContactForm() {
           </div>
         </div>
         <div>
-          <h2 className="text-xl mb-2 header-font">Send a Message</h2>
+          <h2 className=" mb-2 header-font">Send a Message</h2>
           <form className="formtest" ref={form} onSubmit={sendEmail}>
             <div className="border-animation" tabIndex="0">
               <div className="border-animation__inner">
@@ -138,7 +137,7 @@ function ContactForm() {
                   type="email"
                   name="user_email"
                   placeholder="Email"
-                  className="w-full py-3 px-4 text-sm focus:outline-none"
+                  className="w-full py-3 px-4 focus:outline-none"
                   onFocus={(e) =>
                     e.target.parentElement.parentElement.classList.add("focus")
                   }
@@ -157,7 +156,7 @@ function ContactForm() {
                   placeholder="Message"
                   name="message"
                   rows="8"
-                  className="w-full py-3 px-4 text-sm focus:outline-none"
+                  className="w-full py-3 px-4 focus:outline-none"
                   onFocus={(e) =>
                     e.target.parentElement.parentElement.classList.add("focus")
                   }

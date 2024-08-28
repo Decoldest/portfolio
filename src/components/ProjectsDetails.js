@@ -1,5 +1,7 @@
 import boozeBashVideo from "../assets/boozebash.mov";
+import boozeBashSmall from "../assets/boozebashsmall.png";
 import fetchVideo from "../assets/fetch.mov";
+import fetchImage from "../assets/fetch.png";
 
 export const projects = [
   {
@@ -8,6 +10,7 @@ export const projects = [
     description:
       "A multiplayer party game built with React, Socket.io, Phaser, and MongoDB.",
     videoSrc: boozeBashVideo,
+    imgSrc: boozeBashSmall,
     alt: "Booze Bash Party Game",
     href: "https://www.boozebash.ca",
     repo: "https://github.com/Decoldest/mingames",
@@ -32,6 +35,7 @@ export const projects = [
     description:
       "A 3D fetch simulation created in React Three Fiber with Rapier physics engine.",
     videoSrc: fetchVideo,
+    imgSrc: fetchImage,
     alt: "Tortoise Fetching Ball",
     href: "https://fetch-decoldests-projects.vercel.app/",
     repo: "https://github.com/Decoldest/interactive",

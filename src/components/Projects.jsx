@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { projects } from "./ProjectsDetails";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 Projects.propTypes = {
   align: PropTypes.string,
@@ -26,9 +26,23 @@ ProjectPreview.propTypes = {
 };
 
 function ProjectPreview({ project }) {
-  const { id, title, description, videoSrc, alt, href, repo } = project;
+  const { id, title, description, videoSrc, imgSrc, alt, href, repo } = project;
   const navigate = useNavigate();
   const videoRef = useRef(null);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    setIsLargeScreen(mediaQuery.matches);
+
+    const handleResize = (e) => {
+      setIsLargeScreen(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleResize);
+
+    return () => mediaQuery.removeEventListener("change", handleResize);
+  }, []);
 
   const handleMouseEnter = () => {
     if (videoRef.current) {
@@ -54,21 +68,25 @@ function ProjectPreview({ project }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <video
-        src={videoSrc}
-        alt={alt}
-        ref={videoRef}
-        loop
-        muted
-        playsInline
-        className="video-thumbnail"
-      ></video>
-      <h2 className="text-xl header-font">{title}</h2>
-      <div className="flex justify-between items-start gap-6 mr-4">
+      {isLargeScreen ? (
+        <video
+          src={videoSrc}
+          alt={alt}
+          ref={videoRef}
+          loop
+          muted
+          playsInline
+          className="video-thumbnail"
+        ></video>
+      ) : (
+        <img src={imgSrc} alt={alt} className="image-thumbnail"></img>
+      )}
+      <h2 className="text-3xl header-font">{title}</h2>
+      <div className="flex flex-col sm:flex-row justify-between items-start gap-6 mr-4 flex-grow">
         <div>
           <p>{description}</p>
         </div>
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 self-center sm:self-start">
           <a href={repo} target="_blank" rel="noopener noreferrer">
             <button
               className="project-button"
