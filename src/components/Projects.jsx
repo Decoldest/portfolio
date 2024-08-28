@@ -81,8 +81,8 @@ function ProjectPreview({ project }) {
       ) : (
         <img src={imgSrc} alt={alt} className="image-thumbnail"></img>
       )}
-      <h2 className="text-3xl header-font">{title}</h2>
-      <div className="flex flex-col sm:flex-row justify-between items-start gap-6 mr-4 flex-grow">
+      <h2 className="text-2xl header-font">{title}</h2>
+      <div className="flex flex-col sm:flex-row justify-between items-start mb-2 gap-6 mr-4 flex-grow">
         <div>
           <p>{description}</p>
         </div>
@@ -131,11 +131,11 @@ export function ProjectFull() {
     challenges,
   } = project;
   return (
-    <main className="px-2 sm:px-6 m-10 sm:m-14 md:m-18">
+    <main className="px-2 sm:px-6 m-6 sm:m-14 md:m-18">
       <section className="flex flex-row justify-between mb-6 sm:mb-10 ">
         <div>
           <h1 className="text-4xl sm:text-6xl header-font">{title}</h1>
-          <div className="flex flex-row justify-center gap-4 sm:gap-16 more-links">
+          <div className="flex flex-row justify-center gap- sm:gap-16 more-links">
             <a href={href} target="_blank" rel="noopener noreferrer">
               <button className="" onClick={(e) => e.stopPropagation()}>
                 See It Live{" "}
@@ -156,7 +156,7 @@ export function ProjectFull() {
           ))}
         </div>
       </section>
-      <section>
+      <section className="flex justify-center">
         <video
           src={videoSrc}
           alt={alt}

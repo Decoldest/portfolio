@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav>
       <div className="flex justify-between gap-4 p-8">
         <Link to={"/"} className="text-sm sm:text-lg">
-          Logo
+          RW
         </Link>
         <div className="flex gap-4 sm:gap-8 ">
           <Link to={"/projects"} className="text-sm sm:text-lg">
