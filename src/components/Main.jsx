@@ -11,16 +11,18 @@ export default function Main() {
     navigate(`/contact`);
   };
   return (
-    <main className="mx-4 md:mx-20 lg:mx-28">
+    <main className="mx-4 md:mx-20 lg:mx-32">
       <Hero />
-      <Projects />
+      <Projects align={'text-center'}/>
       <Skills />
-      <SocialLinks />
-      <div className="flex flex-row justify-center items-center">
+      <div className="flex flex-row justify-center items-center my-28">
         <button onClick={navigateToContact} className="text-4xl underline">
           Get In Touch
         </button>
       </div>
+      <SocialLinks />
     </main>
   );
 }
+
+

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Icon from "@mdi/react";
+import Email from "./Email";
 import { mdiEmailOutline } from "@mdi/js";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -14,7 +15,6 @@ export default function Contact() {
 
 function ContactForm() {
   const email = `ryanjameswong@outlook.com`;
-  const [emailCopy, setEmailCopy] = useState(false);
   const form = useRef();
   const [error, setError] = useState(null);
 
@@ -57,27 +57,17 @@ function ContactForm() {
       );
   };
 
-  const handleCopyEmail = () => {
-    navigator.clipboard
-      .writeText(email)
-      .then(() => {
-        setEmailCopy(true);
-        setTimeout(() => setEmailCopy(false), 1200);
-      })
-      .catch((err) => console.error("Failed to copy!", err));
-  };
-
   return (
     <section>
       <div className="contact-grid grid md:grid-cols-2 items-start gap-10 px-6 my-4 sm:my-6 mx-auto max-w-6xl">
         <div className="flex flex-col">
-          <h1 className="text-3xl">Contact Me</h1>
+          <h1 className="text-3xl header-font">Contact Me</h1>
           <p className="text-sm mt-3">
             To get in touch you can copy my email below or send a message
             through the form.
           </p>
           <div className="mt-12">
-            <h2 className="text-lg font-extrabold">Email</h2>
+            <h2 className="text-lg header-font">Email</h2>
             <ul className="mt-3">
               <li className="flex items-center">
                 <div className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
@@ -91,16 +81,14 @@ function ContactForm() {
                 <div className="flex flex-col">
                   <h2 className="block text-md">Click to copy</h2>
                   <strong>
-                    <button onClick={handleCopyEmail}>
-                      {emailCopy ? "Copied!" : email}
-                    </button>
+                    <Email/>
                   </strong>
                 </div>
               </li>
             </ul>
           </div>
           <div className="mt-12">
-            <h2 className="text-lg font-extrabold">More of Me</h2>
+            <h2 className="text-lg header-font">More of Me</h2>
             <ul className="flex mt-5 space-x-12">
               <li className="h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                 <div className="flex flex-col items-center text-sm">
@@ -142,7 +130,7 @@ function ContactForm() {
           </div>
         </div>
         <div>
-          <h2 className="text-xl mb-2">Send a Message</h2>
+          <h2 className="text-xl mb-2 header-font">Send a Message</h2>
           <form className="formtest" ref={form} onSubmit={sendEmail}>
             <div className="border-animation" tabIndex="0">
               <div className="border-animation__inner">

@@ -20,10 +20,10 @@ export default function Art() {
 
   return (
     <main className="p-2">
-      <h1 className="text-sm">selected works</h1>
+      <h1 className="header-font">selected works</h1>
       <ImageGrid />
       <div>
-        <h1 className="text-sm">art stack</h1>
+        <h1 className="header-font">art stack</h1>
         <ArtStack />
       </div>
     </main>
