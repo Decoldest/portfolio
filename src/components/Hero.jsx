@@ -23,13 +23,13 @@ export default function Hero() {
     <section className="hero mb-6">
       <div className="main-title-container">
         <h1 className="main-title">Ryan Wong</h1>
-        <h2>full-stack web developer</h2>
+        <h2 className="text-end">full-stack web developer</h2>
       </div>
       <Icon
         path={mdilArrowDown}
         size={1.5}
         className="down-arrow"
-        style={{ opacity: opacity, transition: "opacity 0.2s ease-out" }} // Apply dynamic opacity
+        style={{ opacity: opacity, transition: "opacity 0.2s ease-out" }}
       />
     </section>
   );

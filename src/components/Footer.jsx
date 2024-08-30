@@ -4,9 +4,9 @@ import { mdiArrowTopRight } from "@mdi/js";
 
 export default function Footer() {
   return (
-    <div className="footer flex flex-col gap-4 sm:flex-row justify-around mx-10 my-10 items-center">
-      <div className="">© Ryan Wong {new Date().getFullYear()}</div>
-      <div className="footer-content flex flex-col gap-2">
+    <div className="footer flex flex-col gap-4 sm:flex-row justify-center sm:justify-around my-10 items-center">
+      <div>© Ryan Wong {new Date().getFullYear()}</div>
+      <div className="footer-content flex flex-col gap-2 shrink-0">
         <Email underline={true} className={"footer-email self-start"}/>
         <a
           href={`https://github.com/Decoldest`}

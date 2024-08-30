@@ -14,11 +14,9 @@ export default function Navbar() {
           <Link to={"/art"} className="text-sm sm:text-lg">
             Art
           </Link>
-
           <Link to={"/about"} className="text-sm sm:text-lg">
             About
           </Link>
-
           <Link to={"/contact"} className="text-sm sm:text-lg">
             Contact
           </Link>

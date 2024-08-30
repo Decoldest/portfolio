@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -10,17 +9,10 @@ import { ProjectFull } from "./components/Projects";
 import Footer from "./components/Footer";
 import "@fontsource-variable/anybody";
 import "@fontsource-variable/lora";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 
 export default function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 2000,
-      once: false, 
-      mirror: true,
-    });
-  }, []);
+
   return (
     <>
       <BrowserRouter>

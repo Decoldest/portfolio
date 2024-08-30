@@ -3,6 +3,7 @@ import { projects } from "./ProjectsDetails";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 Projects.propTypes = {
   align: PropTypes.string,
@@ -11,7 +12,9 @@ Projects.propTypes = {
 export default function Projects({ align }) {
   return (
     <main className="p-2">
-      <h1 className={` ${align} header-font`}>featured projects</h1>
+      <Link to={"/projects"}>
+        <h2 className={` ${align} header-font`}>featured projects</h2>
+      </Link>
       <div className="projects-grid">
         {projects.map((project) => (
           <ProjectPreview project={project} key={project.title} />
@@ -171,32 +174,18 @@ export function ProjectFull() {
       </section>
       <section>
         <div className="project-details-full mx-6 sm:mx-22 md:mx-28">
-          <div
-            data-aos="fade-zoom-in"
-            data-aos-delay="100"
-            data-aos-easing="ease-out-back"
-          >
+          <div>
             <h2 className="text-4xl project-header header-font">Intention</h2>
             <p className="project-content">{fullDescription}</p>
           </div>
-          <div
-            data-aos="fade-zoom-in"
-            data-aos-offset="200"
-            data-aos-delay="100"
-            data-aos-easing="ease-in-sine"
-          >
+          <div>
             <h2 className="text-4xl project-header header-font">
               What I Learned
             </h2>
             <p className="project-content">{learned}</p>
           </div>
 
-          <div
-            data-aos="fade-zoom-in"
-            data-aos-offset="200"
-            data-aos-delay="100"
-            data-aos-easing="ease-in-sine"
-          >
+          <div>
             <h2 className="text-4xl project-header header-font">Challenges</h2>
             <p className="project-content">{challenges}</p>
           </div>
