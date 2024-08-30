@@ -57,7 +57,7 @@ function ContactForm() {
   };
 
   return (
-    <section>
+    <section className="contact">
       <div className="contact-grid grid md:grid-cols-2 items-start gap-10 px-6 my-4 sm:my-6 mx-auto max-w-6xl">
         <div className="flex flex-col">
           <h1 className="header-font">Contact Me</h1>

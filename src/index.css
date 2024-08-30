@@ -6,7 +6,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 300;
   color-scheme: light dark;
-  background-color: #12172a;
+  background-color: #10131d;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,21 +16,45 @@
 
 .light-theme {
   background-color: #ffffff;
-  color: rgb(51 65 85);
+  color: rgb(24, 38, 57);
   transition: background-color 1s ease, color 2s ease;
 }
 
 .main-title {
-  font-size: 8rem;
+  font-size: 10rem;
   font-family: 'Josefin Sans Variable', sans-serif;
   font-weight: 400;
 }
 
+@media (min-width: 1400px) {
+  h1.main-title {
+    font-size: 12rem;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  h1.main-title {
+    font-size: 8rem;
+  }
+}
+
 @media (max-width: 1000px) {
+  h1.main-title {
+    font-size: 8rem;
+  }
+}
+@media (max-width: 950px) {
+  h1.main-title {
+    margin-top: 5%;
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 768px) {
   h1.main-title {
     font-size: 6rem;
   }
-  
 }
 
 .hero {
@@ -132,11 +156,17 @@ textarea {
   border-bottom: var(--border-width) solid white;
 }
 
+.border-animation input,
+.border-animation textarea {
+  background-color: #080a10;
+  color: #ffffff;
+}
+
 .border-animation .border-animation__inner {
   position: relative;
   width: 100%;
   cursor: pointer;
-  background: #333;
+  background: #10131d;
   z-index: 1;
 }
 
@@ -378,10 +408,9 @@ img.me {
   height: 200px;
   object-fit: cover;
   flex-shrink: 0;
-  
-  -webkit-box-shadow: -0.5px -0.5px 10px 14.5px rgb(80, 79, 79);
-  -moz-box-shadow: -0.5px -0.5px 10px 14.5px rgb(80, 79, 79);
-  box-shadow: 0 0 0 8px rgb(77, 77, 77);
+  -webkit-box-shadow: 0 0 0 8px #242b41;
+  -moz-box-shadow: 0 0 0 8px #242b41;
+  box-shadow: 0 0 0 8px #242b41;
 }
 
 @media (max-width: 1000px) {
@@ -487,6 +516,10 @@ img.me {
   }
 }
 
+.contact {
+  min-height: 80svh;
+}
+
 .contact-email {
   font-size: 1.2rem;
 }
@@ -513,4 +546,8 @@ img.me {
 
 .contact-grid form, .contact-grid p {
   font-size: 1.2rem;
+}
+
+.contact-grid form{
+  max-width: 95%;
 }

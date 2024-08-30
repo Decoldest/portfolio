@@ -10,7 +10,6 @@ import Footer from "./components/Footer";
 import "@fontsource-variable/anybody";
 import "@fontsource-variable/lora";
 
-
 export default function App() {
 
   return (

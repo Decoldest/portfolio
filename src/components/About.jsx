@@ -1,5 +1,4 @@
 import portrait from "../assets/me.png";
-import { useEffect,useRef, useState } from "react";
 
 export default function About() {
   return (
@@ -7,10 +6,10 @@ export default function About() {
       <div className="about-container gap-4 sm:gap-10">
         <div className="portrait-container flex flex-col items-center justify-center gap-6">
           <img src={portrait} alt="Personal Portrait" className="me" />
-          <p className="mx-10 text-center">{`I made this digital portrait in Photoshop :)`}</p>
+          <p className="mx-10 text-center">{`I painted this digital portrait in Photoshop :)`}</p>
         </div>
         <div className="about-text">
-          <h1 id="name">{`I'm Ryan`}</h1>
+          <h1 id="name" className="header-font">{`I'm Ryan`}</h1>
           <p>
             {`I am a full-stack developer bringing a unique blend of creativity
             and traditionality to craft visually appealing and functional web experiences.`}
