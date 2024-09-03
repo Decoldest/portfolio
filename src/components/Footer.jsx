@@ -14,7 +14,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="flex"
         >
-          Open CV
+          View CV
           <Icon path={mdiArrowTopRight} size={1} />
         </a>
         <a

@@ -32,10 +32,6 @@ function SkillsGrid() {
           <div className="text-center">Node.js</div>
         </div>
         <div className="flex flex-col items-center justify-center p-4">
-          <i className="devicon-tailwindcss-original text-2xl"></i>
-          <div className="text-center">Tailwind</div>
-        </div>
-        <div className="flex flex-col items-center justify-center p-4">
           <i className="devicon-express-original text-2xl"></i>
           <div className="text-center">Express</div>
         </div>
@@ -46,6 +42,10 @@ function SkillsGrid() {
         <div className="flex flex-col items-center justify-center p-4">
           <i className="devicon-git-plain text-xl"></i>
           <div className="text-center">Git</div>
+        </div>
+        <div className="flex flex-col items-center justify-center p-4">
+          <i className="devicon-tailwindcss-original text-2xl"></i>
+          <div className="text-center">Tailwind</div>
         </div>
         <div className="flex flex-col items-center justify-center p-4">
           <i className="devicon-sass-original text-3xl"></i>

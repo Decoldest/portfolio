@@ -133,6 +133,11 @@ export function ProjectFull() {
     learned,
     challenges,
   } = project;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="px-2 sm:px-6 m-6 sm:m-14 md:m-18">
       <section className="flex flex-row justify-between mb-6 sm:mb-10 ">
