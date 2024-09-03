@@ -19,7 +19,7 @@ export const projects = [
     The concept of a multiplayer online party game isn't new, but my app offers a unique twist: 
     the ability to wager drinks on the outcome of each minigame, adding a fun and competitive element to the experience. 
     `,
-    learned: `With this project I learned how to utilize websockets with Socket.io to enable real-time bi-directional communication between a 
+    learned: `With this project I learned how to utilize websockets with Socket.io to enable real-time bidirectional communication between a 
     client and server. I also learned how to render a basic game with Phaser and use game information from the server for updates.
     `,
     challenges: `The most challenging part of this project was managing the socket connections and events in a room. Especially for games that

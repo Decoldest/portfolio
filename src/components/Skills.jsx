@@ -40,10 +40,6 @@ function SkillsGrid() {
           <div className="text-center">Express</div>
         </div>
         <div className="flex flex-col items-center justify-center p-4">
-          <i className="devicon-python-plain text-xl"></i>
-          <div className="text-center">Python</div>
-        </div>
-        <div className="flex flex-col items-center justify-center p-4">
           <i className="devicon-mongodb-plain text-2xl"></i>
           <div className="text-center">MongoDB</div>
         </div>
@@ -58,6 +54,10 @@ function SkillsGrid() {
         <div className="flex flex-col items-center justify-center p-4">
           <i className="devicon-threejs-original text-3xl"></i>
           <div className="text-center">Three.js</div>
+        </div>
+        <div className="flex flex-col items-center justify-center p-4">
+          <i className="devicon-photoshop-plain text-xl"></i>
+          <div className="text-center">Photoshop</div>
         </div>
       </div>
     </section>
