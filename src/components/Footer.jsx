@@ -1,6 +1,6 @@
 import Email from "./Email";
 import Icon from "@mdi/react";
-import { mdiArrowTopRight, mdiFileAccount } from "@mdi/js";
+import { mdiArrowTopRight } from "@mdi/js";
 
 export default function Footer() {
   return (
@@ -14,8 +14,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="flex"
         >
-          <Icon path={mdiFileAccount} size={1} />
-          Resume
+          Open CV
           <Icon path={mdiArrowTopRight} size={1} />
         </a>
         <a
