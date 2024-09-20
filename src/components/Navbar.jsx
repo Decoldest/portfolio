@@ -17,6 +17,14 @@ export default function Navbar() {
           <Link to={"/about"} className="text-sm sm:text-lg">
             About
           </Link>
+          <a
+            href="https://ryanwongresume.tiiny.site/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex"
+          >
+            Resume
+          </a>
           <Link to={"/contact"} className="text-sm sm:text-lg">
             Contact
           </Link>

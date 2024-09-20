@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer-content flex flex-col gap-2 shrink-0">
         <Email underline={true} className={"footer-email self-start"} />
         <a
-          href="https://ryanjameswongresume.tiiny.site/"
+          href="https://ryanwongresume.tiiny.site/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex"
