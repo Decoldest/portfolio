@@ -325,6 +325,11 @@ textarea {
   .project-preview {
     font-size: 1rem;
   }
+  p.project-content {
+    font-size: 1rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -396,7 +401,7 @@ textarea {
 }
 
 .project-content {
-  line-height: 4rem;
+  line-height: 5rem;
   margin-bottom: 5rem;
 }
 

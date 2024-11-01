@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav>
-      <div className="flex justify-between gap-4 p-8">
+      <div className="flex justify-between gap-4 p-2 sm:p-8">
         <Link to={"/"} className="text-sm sm:text-lg">
           RW
         </Link>
@@ -21,7 +21,7 @@ export default function Navbar() {
             href="https://ryanwongresume.tiiny.site/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex"
+            className="text-sm sm:text-lg"
           >
             Resume
           </a>

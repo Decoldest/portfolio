@@ -98,14 +98,16 @@ function ProjectPreview({ project }) {
               Github
             </button>
           </a>
-          <a href={href} target="_blank" rel="noopener noreferrer">
-            <button
-              className="project-button"
-              onClick={(e) => e.stopPropagation()}
-            >
-              Visit
-            </button>
-          </a>
+          {href && (
+            <a href={href} target="_blank" rel="noopener noreferrer">
+              <button
+                className="project-button"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Visit
+              </button>
+            </a>
+          )}
         </div>
       </div>
       <button onClick={navigateToProject}>
@@ -140,16 +142,18 @@ export function ProjectFull() {
 
   return (
     <main className="px-2 sm:px-6 m-6 sm:m-14 md:m-18">
-      <section className="flex flex-row justify-between mb-6 sm:mb-10 ">
+      <section className="flex flex-col sm:flex-row justify-between mb-6 sm:mb-10 ">
         <div>
           <h1 className="text-4xl sm:text-6xl header-font">{title}</h1>
-          <div className="flex flex-row justify-center gap- sm:gap-16 more-links">
-            <a href={href} target="_blank" rel="noopener noreferrer">
-              <button className="" onClick={(e) => e.stopPropagation()}>
-                See It Live{" "}
-                <i className="fa-solid fa-arrow-up-right-from-square"></i>
-              </button>
-            </a>
+          <div className="flex flex-row gap-6 sm:gap-16 more-links">
+            {href && (
+              <a href={href} target="_blank" rel="noopener noreferrer">
+                <button className="" onClick={(e) => e.stopPropagation()}>
+                  See It Live{" "}
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+              </a>
+            )}
             <a href={repo} target="_blank" rel="noopener noreferrer">
               <button className="" onClick={(e) => e.stopPropagation()}>
                 Source Code{" "}
@@ -178,7 +182,7 @@ export function ProjectFull() {
         ></video>
       </section>
       <section>
-        <div className="project-details-full mx-6 sm:mx-22 md:mx-28">
+        <div className="project-details-full mx-2 sm:mx-22 md:mx-28">
           <div>
             <h2 className="text-4xl project-header header-font">Intention</h2>
             <p className="project-content">{fullDescription}</p>
