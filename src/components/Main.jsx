@@ -25,8 +25,8 @@ export default function Main() {
           freelance artist in multiple forms of physical and digital media.
         </p>
       </section>
-      <Projects align={"text-center mb-4"} />
       <Work align={"text-center mb-4"} />
+      <Projects align={"text-center mb-4"} />
       <Skills />
       <section className="flex flex-row justify-center items-center py-10 sm:py-18 my-16 sm:my-28">
         <button onClick={navigateToContact} className="text-4xl underline">
