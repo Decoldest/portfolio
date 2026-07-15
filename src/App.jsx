@@ -7,6 +7,7 @@ import Art from "./components/Art";
 import Contact from "./components/Contact";
 import { ProjectFull } from "./components/Projects";
 import Footer from "./components/Footer";
+import Work from "./components/Work";
 import "@fontsource-variable/anybody";
 import "@fontsource-variable/lora";
 
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/resume" element={<Projects />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectFull />} />
+          <Route path="/work" element={<Work />} />
           <Route path="/art" element={<Art />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

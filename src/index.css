@@ -5,8 +5,11 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color-scheme: light dark;
+  color-scheme: dark;
   background-color: #10131d;
+  color: #f4f0ea;
+  --heading-color: #fc6d6d;
+  --muted-color: #c9c5c0;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +20,33 @@
 .light-theme {
   background-color: #ffffff;
   color: rgb(24, 38, 57);
+  --heading-color: #182639;
+  --muted-color: #526071;
   transition: background-color 1s ease, color 2s ease;
+}
+
+body {
+  margin: 0;
+  background-color: #10131d;
+  color: #f4f0ea;
+}
+
+html.light-theme body {
+  background-color: #ffffff;
+  color: rgb(24, 38, 57);
+}
+
+h1, h2, h3, .header-font {
+  color: var(--heading-color);
+}
+
+a {
+  color: inherit;
+  transition: color 180ms ease;
+}
+
+a:hover {
+  color: var(--heading-color);
 }
 
 .main-title {
@@ -398,6 +427,77 @@ textarea {
 
 .header-font {
   font-family: 'Lora', serif;
+}
+
+.work-page {
+  min-height: 70svh;
+}
+
+.work-card {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 2rem;
+  border: 1px solid color-mix(in srgb, var(--heading-color) 55%, transparent);
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--heading-color) 8%, transparent);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.16);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.work-card-media {
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+}
+
+.work-card-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.work-read-more {
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.work-card-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--heading-color) 25%, transparent);
+}
+
+.work-card p {
+  color: var(--muted-color);
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.work-card-meta {
+  color: var(--heading-color);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .work-card {
+    padding: 1.25rem;
+  }
+
+  .work-card p {
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
 }
 
 .project-content {

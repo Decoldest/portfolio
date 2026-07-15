@@ -8,6 +8,9 @@ export default function Navbar() {
           RW
         </Link>
         <div className="flex gap-4 sm:gap-8 ">
+          <Link to={"/work"} className="text-sm sm:text-lg">
+            Work
+          </Link>
           <Link to={"/projects"} className="text-sm sm:text-lg">
             Projects
           </Link>
